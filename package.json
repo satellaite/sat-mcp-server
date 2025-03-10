@@ -1,10 +1,14 @@
 {
     "name": "@satellaite/mcp-server",
-    "version": "0.5.2",
+    "version": "0.5.3",
     "description": "MCP server for Satellaite API",
     "license": "MIT",
     "author": "Satellaite, MB",
     "homepage": "https://satellaite.com",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/satellaite/sat-mcp-server.git"
+    },    
     "type": "module",
     "bin": {
         "mcp-server-satellaite": "dist/index.js"
