@@ -14,7 +14,7 @@ if (!API_BASE_URL) {
 // Initialize the MCP server
 const server = new McpServer({
     name: "Satellaite MCP Server",
-    version: "0.5.2"
+    version: "0.5.4"
 }, {
     capabilities: {}
 });
@@ -140,6 +140,7 @@ server.tool(
 async function main() {
     const transport = new StdioServerTransport();
     await server.connect(transport);
+    console.error("Satellaite MCP Server running on stdio");
 }
 
 main().catch((error) => {
