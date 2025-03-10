@@ -1,11 +1,11 @@
+#!/usr/bin/env node
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { callRelay, getRelays } from "./satellaite.js";
 import { z } from "zod";
 
-export const API_BASE_URL = process.env.API_BASE_URL;
+export const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:8080/api";
 if (!API_BASE_URL) {
     console.error("Missing environment variable: API_BASE_URL");
     process.exit(1);
@@ -14,7 +14,7 @@ if (!API_BASE_URL) {
 // Initialize the MCP server
 const server = new McpServer({
     name: "Satellaite MCP Server",
-    version: "0.5.1"
+    version: "0.5.2"
 }, {
     capabilities: {}
 });
